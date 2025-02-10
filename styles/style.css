@@ -136,7 +136,6 @@
 .card-button {
   display: flex;
   flex-direction: row;
-  display: 5px;
   align-self: flex-end;
   padding-inline-end: 25px;
   padding-block-end: 25px;
