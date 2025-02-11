@@ -15,7 +15,7 @@
   min-block-size: 100dvb;
   margin: 0 auto;
   padding-block: 100px;
-  font-family: var(--font-family);
+  font-family: var(--font-family, sans-serif);
   background-color: var(--main-color);
   background-image: var(--background-image);
   background-size: cover;
@@ -37,7 +37,7 @@
   margin-block-end: 100px;
   border: 2px solid var(--accent-color);
   padding-block: clamp(120px, calc(120px + (100vi - 375px) * 8 / 1065), 128px);
-  font-family: var(--font-family-different);
+  font-family: var(--font-family-different, fantasy);
   background-color: var(--main-color);
 }
 
@@ -103,7 +103,7 @@
   z-index: 1;
   opacity: 50%;
   color: var(--accent-color);
-  font-family: var(--font-family-different);
+  font-family: var(--font-family-different, fantasy);
   font-size: 14px;
   text-shadow: -1px 0 var(--main-color), 0 1px var(--main-color), 
     1px 0 var(--main-color), 0 -1px var(--main-color);
@@ -112,11 +112,11 @@
   inset-inline-end: 25px;
 }
 
-@supports (stroke: #fff) or (-webkit-text-stroke: 1px #fff) {
+@supports (text-stroke: #fff) or (-webkit-text-stroke: 1px #fff) {
   .watermark {
-    stroke: #fff;
     text-shadow: none;
     -webkit-text-stroke: 1px #fff;
+    text-stroke: #fff;
   }
 }
 
@@ -137,8 +137,10 @@
   display: flex;
   flex-direction: row;
   align-self: flex-end;
+  align-items: center;
   padding-inline-end: 25px;
   padding-block-end: 25px;
+  gap: 2px;
 }
 
 .card__icon-button {
@@ -189,6 +191,8 @@
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
   transform: translate(-100%);
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .button:hover::after {
@@ -199,7 +203,7 @@
   margin: auto;
   z-index: 2;
   color: var(--main-color);
-  font-family: var(--font-family-different);
+  font-family: var(--font-family-different, fantasy);
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
@@ -212,6 +216,11 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+}
+
+.like-icon {
+  inline-size: 39px;
+  block-size: 38px;
 }
 
 .like-icon .core {
@@ -233,6 +242,11 @@
 }
 
 .like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.card__icon-button:hover .core {
   fill: var(--accent-color);
   transition: fill 0.3s linear 0.05s;
 }
@@ -311,6 +325,8 @@
   inline-size: 339px;
   block-size: 55px;
   position: relative;
+  border: 2px solid var(--accent-color);
+  background-color: var(--main-color);
 }
 
 .floppy-disk {
@@ -356,7 +372,7 @@
 
 .dialog-text {
   color: var(--accent-color);
-  font-family: var(--font-family-different);
+  font-family: var(--font-family-different, fantasy);
   font-size: 14px;
   line-height: 151%;
   text-transform: uppercase;
@@ -397,7 +413,7 @@
   }
 
   .save-image {
-    block-size: 28px;
+    block-size: 21px;
   }
 
   .dialog[open] {
