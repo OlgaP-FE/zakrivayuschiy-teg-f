@@ -20,7 +20,7 @@
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--font-weight-text);
+  font-variation-settings: "wght" var(--font-weight-text);
 }
 
 .section-property {
@@ -79,8 +79,7 @@
   font-size: var(--font-size-text);
   line-height: normal;
   color: var(--accent-color);
-  font-variation-settings: 'wgth' var(--font-weight-title);
-
+  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .card-image-item {
@@ -105,7 +104,7 @@
   color: var(--accent-color);
   font-family: var(--font-family-different, fantasy);
   font-size: 14px;
-  text-shadow: -1px 0 var(--main-color), 0 1px var(--main-color), 
+  text-shadow: -1px 0 var(--main-color), 0 1px var(--main-color),
     1px 0 var(--main-color), 0 -1px var(--main-color);
   mix-blend-mode: hard-light;
   inset-block-start: 25px;
@@ -135,25 +134,23 @@
 
 .card-button {
   display: flex;
+  inline-size: 100%;
   flex-direction: row;
-  align-self: flex-end;
-  align-items: center;
+  justify-content: end;
   padding-inline-end: 25px;
   padding-block-end: 25px;
-  gap: 2px;
+  gap: 6px;
 }
 
 .card__icon-button {
   display: flex;
-  inline-size: 48px;
-  block-size: 38px;
+  inline-size: 38px;
+  max-block-size: 38px;
   padding: 0;
   justify-content: center;
   align-items: center;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;
-  transition: border-color 0.3s ease;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
   background-color: var(--main-color);
   cursor: pointer;
 }
@@ -184,7 +181,7 @@
 }
 
 .button::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -211,7 +208,7 @@
 
 .card__like-button {
   display: flex;
-  inline-size: 129px;
+  inline-size: 130px;
   block-size: 38px;
   justify-content: center;
   align-items: center;
@@ -219,8 +216,8 @@
 }
 
 .like-icon {
-  inline-size: 39px;
-  block-size: 38px;
+  min-inline-size: 38px;
+  flex-shrink: 0;
 }
 
 .like-icon .core {
@@ -318,23 +315,22 @@
 
 .save-button {
   display: flex;
+  inline-size: 100%;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 19px;
-  inline-size: 339px;
-  block-size: 55px;
-  position: relative;
+  padding: 15px 19px;
   border: 2px solid var(--accent-color);
   background-color: var(--main-color);
 }
 
 .floppy-disk {
   color: var(--main-color);
-  z-index: 2;
-  aspect-ratio: 1/1;
-  block-size: 21px;
   mix-blend-mode: difference;
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
 }
 
 .dialog {
@@ -379,9 +375,9 @@
 }
 
 .dialog-image {
-  block-size: 39px;
+  height: 39px;
+  width: 39px;
   align-self: center;
-  aspect-ratio: 1/1;
   flex-shrink: 0;
 }
 
@@ -406,14 +402,14 @@
 
   .save-button {
     block-size: 84px;
-    inline-size: min(100vi, 312px);
+    inline-size: 100%;
     flex-direction: column;
     gap: 8px;
-    padding-block: 15px;
   }
 
-  .save-image {
-    block-size: 21px;
+  .floppy-disk {
+    width: 28px;
+    height: 28px;
   }
 
   .dialog[open] {
