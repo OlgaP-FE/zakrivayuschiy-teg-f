@@ -331,6 +331,7 @@
   width: 21px;
   height: 21px;
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .dialog {
